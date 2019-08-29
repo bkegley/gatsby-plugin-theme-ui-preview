@@ -61,7 +61,7 @@ function ThemePreviewProvider({children}) {
 
   React.useEffect(() => {
     const customThemes = JSON.parse(localStorage.getItem(THEME_PREVIEW_LOCAL_STORAGE_KEY)) || {}
-    const activeTheme = localStorage.getItem(THEME_PREVIEW_LOCAL_STORAGE_ACTIVE_KEY)
+    const activeTheme = localStorage.getItem(THEME_PREVIEW_LOCAL_STORAGE_ACTIVE_KEY) || 'default'
     const presets = Object.assign(
       ...Object.entries(themePresets).map(([name, theme]) => {
         return {
